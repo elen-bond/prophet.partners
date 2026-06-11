@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>prophet.partners | private market access</title>
+<meta name="description" content="We move capital towards miracles. Private market access across primary markets, pre-IPO secondaries, and private credit, for family offices, founders, and funds.">
+<meta property="og:title" content="prophet.partners">
+<meta property="og:description" content="We move capital towards miracles. Some call them liquidity events.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --red:#ff0000;
+  --red-light:#ff4040;
+  --red-pale:#ffeeee;
+  --red-wash:#fff6f6;
+  --black:#0a0a0a;
+  --dark:#1a1a1a;
+  --mid:#555555;
+  --muted:#8a8378;
+  --light:#c8c2b6;
+  --border:#e6e1d8;
+  --bg:#ffffff;
+  --off-white:#faf8f3;
+  --serif:'Libre Baskerville',Georgia,serif;
+  --sans:'Jost','Futura PT','Futura','Century Gothic',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--black);font-family:var(--sans);font-weight:400;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+.container{max-width:1140px;margin:0 auto;padding:0 40px}
+img{max-width:100%;display:block}
+
+/* reveal */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ===== NAV ===== */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.logo{font-family:var(--serif);font-size:1.34rem;letter-spacing:-.01em;color:var(--black);display:flex;align-items:center}
+.logo .dot{width:7px;height:7px;border-radius:50%;background:var(--red);margin:0 2px;display:inline-block;transform:translateY(-4px)}
+.nav-links{display:flex;align-items:center;gap:38px}
+.nav-links a{font-family:var(--sans);font-size:.8rem;font-weight:500;letter-spacing:.04em;text-transform:lowercase;color:var(--mid);position:relative;transition:color .25s}
+.nav-links a:hover{color:var(--black)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--red);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{width:62px;height:62px;border-radius:50%;background:var(--red);color:#fff;border:1.5px solid var(--red);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-size:.62rem;line-height:1.2;letter-spacing:.01em;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.nav-cta:hover{background:#fff;color:var(--red)}
+.burger{display:none;background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--black)}
+
+/* ===== HERO ===== */
+.hero{padding:104px 0 72px}
+.hero-tag{font-family:var(--serif);font-size:1.04rem;letter-spacing:.06em;color:var(--red);margin-bottom:30px;display:block}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7vw,84px);line-height:1.05;letter-spacing:-.025em;color:var(--black);max-width:15ch}
+.hero h1 .hl{color:var(--red)}
+.rotor-line{font-family:var(--sans);font-size:clamp(20px,2.6vw,27px);font-weight:400;color:var(--mid);margin-top:30px;display:flex;align-items:baseline;gap:.34em;flex-wrap:wrap;line-height:1.3}
+.rotor{display:inline-flex;overflow:visible}
+.rotor-word{font-family:var(--serif);font-style:italic;color:var(--red);white-space:nowrap;transition:transform .46s cubic-bezier(.2,.7,.2,1),opacity .46s,filter .46s;will-change:transform,opacity,filter}
+.rotor-word.leave{transform:translateY(-.5em);opacity:0;filter:blur(7px)}
+.rotor-word.enter{transform:translateY(.5em);opacity:0;filter:blur(7px)}
+.hero-ctas{display:flex;align-items:center;gap:34px;margin-top:52px;flex-wrap:wrap}
+.btn-primary{width:158px;height:158px;border-radius:50%;background:var(--red);color:#fff;border:2px solid var(--red);font-family:var(--serif);font-size:.94rem;line-height:1.3;text-align:center;display:flex;align-items:center;justify-content:center;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.btn-primary:hover{background:#fff;color:var(--red)}
+.btn-ghost{font-family:var(--sans);font-size:.86rem;font-weight:500;letter-spacing:.03em;color:var(--black);position:relative;padding-bottom:3px}
+.btn-ghost::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--black);transition:background .25s}
+.btn-ghost:hover{color:var(--red)}
+.btn-ghost:hover::after{background:var(--red)}
+.hero-foot{margin-top:60px;font-family:var(--sans);font-size:.86rem;color:var(--muted);max-width:46ch;line-height:1.7}
+.hero-foot b{color:var(--red);font-weight:600}
+
+/* ===== ARTWORK ===== */
+.artwork{background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:84px 0}
+.artwork-inner{max-width:840px;margin:0 auto;text-align:center}
+.artwork img{margin:0 auto}
+.artwork-cap{font-family:var(--serif);font-style:italic;font-size:.86rem;color:var(--muted);margin-top:26px;letter-spacing:.02em}
+
+/* ===== MANIFESTO ===== */
+.manifesto{padding:108px 0;text-align:center}
+.manifesto p{font-family:var(--serif);font-weight:400;font-size:clamp(23px,3.4vw,34px);line-height:1.45;color:var(--dark);max-width:18ch;margin:0 auto}
+.manifesto p strong{color:var(--red);font-weight:400}
+
+/* ===== SECTION SHELL ===== */
+.section-label{font-family:var(--sans);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--red);margin-bottom:18px}
+.section-title{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.6vw,52px);line-height:1.13;letter-spacing:-.012em;color:var(--black)}
+.section-title .hl{color:var(--red)}
+.section-sub{font-family:var(--sans);font-size:1.05rem;color:var(--mid);max-width:52ch;margin-top:20px;line-height:1.65}
+
+/* ===== WHAT WE DO ===== */
+.about{padding:120px 0}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:58px;border:1px solid var(--border)}
+.dcard{padding:50px 40px;border-right:1px solid var(--border);transition:background .35s}
+.dcard:last-child{border-right:none}
+.dcard:hover{background:var(--red-wash)}
+.dcard-badge{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--red);background:var(--red-pale);padding:6px 14px;display:inline-block;margin-bottom:26px}
+.dcard h3{font-family:var(--serif);font-weight:400;font-style:italic;font-size:1.42rem;line-height:1.3;color:var(--black);margin-bottom:28px}
+.dcard ul{list-style:none}
+.dcard li{font-family:var(--sans);font-size:.96rem;color:var(--mid);padding:12px 0;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px}
+.dcard li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex:none}
+
+/* ===== MARQUEE ===== */
+.marq{padding:74px 0;background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marq .section-label{text-align:center}
+.marquee{position:relative;overflow:hidden;margin-top:36px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent);mask-image:linear-gradient(90deg,transparent,#000 11%,#000 89%,transparent)}
+.marq-track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .marq-track{animation-play-state:paused}
+.marq-item{font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);color:var(--black);padding:0 38px;white-space:nowrap;display:flex;align-items:center;gap:38px;letter-spacing:-.01em}
+.marq-item::after{content:'';width:7px;height:7px;border-radius:50%;background:var(--red);flex:none}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marq-disc{text-align:center;font-family:var(--sans);font-size:.74rem;color:var(--muted);margin-top:36px;padding:0 24px}
+
+/* ===== WHO WE SERVE ===== */
+.serve{padding:120px 0}
+.serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:58px}
+.scard{padding:46px 38px;border:1px solid var(--border);transition:border-color .35s,transform .35s}
+.scard:hover{border-color:var(--red);transform:translateY(-4px)}
+.scard-who{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:22px}
+.scard h3{font-family:var(--serif);font-weight:400;font-size:1.56rem;line-height:1.24;color:var(--black);margin-bottom:18px}
+.scard p{font-family:var(--sans);font-size:.96rem;color:var(--mid);line-height:1.7;max-width:32ch}
+
+/* ===== CONTACT (RED) ===== */
+.contact{background:var(--red);color:#fff;padding:120px 0}
+.contact-inner{max-width:600px;margin:0 auto;text-align:center}
+.contact .section-label{color:rgba(255,255,255,.7)}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,50px);line-height:1.12;letter-spacing:-.012em;color:#fff}
+.contact h2 em{font-style:italic}
+.contact .csub{font-family:var(--sans);font-size:1.06rem;color:rgba(255,255,255,.9);max-width:48ch;margin:22px auto 0;line-height:1.62}
+.cform{display:flex;flex-direction:column;gap:14px;text-align:left;margin-top:48px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cform input,.cform select,.cform textarea{background:#fff;border:1px solid transparent;border-radius:0;padding:16px 18px;font-family:var(--sans);font-size:1rem;color:var(--black);outline:none;transition:box-shadow .2s;width:100%}
+.cform input::placeholder,.cform textarea::placeholder{color:var(--light)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{box-shadow:0 0 0 3px rgba(0,0,0,.22)}
+.cform select{appearance:none;cursor:pointer;color:var(--mid)}
+.cform textarea{resize:vertical;min-height:120px}
+.submit{margin-top:10px;background:#fff;color:var(--red);border:2px solid #fff;border-radius:100px;padding:18px 40px;font-family:var(--serif);font-size:.98rem;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1);width:100%}
+.submit:hover{background:var(--black);color:#fff;border-color:var(--black)}
+.sent{display:none;font-family:var(--serif);font-style:italic;font-size:1.24rem;color:#fff;margin-top:40px}
+.contact-meta{font-family:var(--sans);font-size:.92rem;color:rgba(255,255,255,.85);margin-top:40px;line-height:2}
+.contact-meta a{color:#fff;border-bottom:1.5px solid #fff}
+
+/* ===== FOOTER ===== */
+footer{background:var(--black);color:#9b9486;padding:64px 0}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+.foot-logo{font-family:var(--serif);font-size:1.4rem;color:#fff;display:flex;align-items:center}
+.foot-logo .dot{width:7px;height:7px;border-radius:50%;background:var(--red);margin:0 2px;display:inline-block;transform:translateY(-4px)}
+.foot-nav{display:flex;gap:30px;flex-wrap:wrap}
+.foot-nav a{font-family:var(--sans);font-size:.8rem;letter-spacing:.04em;color:#cfc7b8;transition:color .25s}
+.foot-nav a:hover{color:#fff}
+.disc{font-family:var(--sans);font-size:.72rem;line-height:1.85;color:#7d766a;max-width:88ch;border-top:1px solid rgba(255,255,255,.1);padding-top:34px}
+.disc p{margin-bottom:.9em}
+.disc b{color:#cfc7b8}
+.copyline{font-family:var(--serif);font-size:1rem;color:#fff;margin-top:24px}
+
+/* ===== GO TOP ===== */
+.go-top{position:fixed;bottom:36px;right:36px;width:60px;height:60px;border-radius:50%;background:var(--red);color:#fff;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:0;transform:translateY(16px);transition:opacity .35s,transform .35s,background .25s,color .25s;z-index:80;box-shadow:0 8px 28px rgba(255,0,0,.28)}
+.go-top.visible{opacity:1;transform:translateY(0)}
+.go-top:hover{background:#fff;color:var(--red)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:980px){
+  .cards3{grid-template-columns:1fr}
+  .dcard{border-right:none;border-bottom:1px solid var(--border)}
+  .dcard:last-child{border-bottom:none}
+  .serve-grid{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:860px){
+  .container{padding:0 24px}
+  .nav{height:72px}
+  .nav-links{position:fixed;inset:72px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:#fff;border-bottom:1px solid var(--border);padding:8px 24px 20px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:15px 0;width:100%;border-bottom:1px solid var(--border);font-size:.95rem}
+  .nav-cta{display:none}
+  .burger{display:block}
+  .hero{padding:72px 0 56px}
+  .hero h1{font-size:clamp(40px,11vw,52px)}
+  .btn-primary{width:128px;height:128px;font-size:.84rem}
+  .about,.serve{padding:74px 0}
+  .manifesto{padding:72px 0}
+  .artwork{padding:60px 0}
+  .contact{padding:80px 0}
+  .frow{grid-template-columns:1fr}
+  .cform input,.cform select,.cform textarea{font-size:16px}
+  .foot-top{align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .fade-in{opacity:1!important;transform:none!important;transition:none!important}
+  .rotor-word{transition:opacity .3s!important}
+  .rotor-word.leave,.rotor-word.enter{transform:none!important;filter:none!important}
+  .marq-track{animation-duration:0s!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo">prophet<span class="dot"></span>partners</a>
+    <button class="burger" id="burger" aria-label="menu">☰</button>
+    <nav class="nav-links" id="links">
+      <a href="#about">what we do</a>
+      <a href="#access">access</a>
+      <a href="#serve">who we serve</a>
+      <a href="#contact" class="nav-cta">break<br>bread</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag">primary markets &middot; secondaries &middot; private credit</span>
+      <h1>We move capital towards <span class="hl">miracles.</span></h1>
+      <div class="rotor-line">
+        <span>Some call them</span>
+        <span class="rotor"><span class="rotor-word" id="rotor">liquidity events</span></span>
+        <span>.</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">break<br>bread</a>
+        <a href="#about" class="btn-ghost">explore access</a>
+      </div>
+      <p class="hero-foot">Built for <b>family offices</b>, <b>founders</b>, and <b>funds</b> moving real size across the private market lifecycle.</p>
+    </div>
+  </section>
+
+  <!-- ===== ARTWORK ===== -->
+  <section class="artwork">
+    <div class="container">
+      <div class="artwork-inner fade-in">
+        <img src="assets/break-bread.jpg" alt="Yue Minjun-inspired painting of laughing figures around a table set with a steak, caviar, champagne, a stack of cash, and a wine bottle labelled EXIT">
+        <div class="artwork-cap">inspired by Yue Minjun. the exit is on the table.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANIFESTO ===== -->
+  <section class="manifesto">
+    <div class="container">
+      <p class="fade-in">Capital is everywhere. <strong>Access isn't.</strong></p>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label fade-in">what we do</div>
+      <h2 class="section-title fade-in">Access opportunities across primary markets, pre-IPO secondaries, and <span class="hl">private credit.</span></h2>
+      <div class="cards3 fade-in">
+        <div class="dcard">
+          <span class="dcard-badge">Primary Markets</span>
+          <h3>Where ambition meets capital.</h3>
+          <ul><li>Venture capital</li><li>Growth financings</li><li>Capital introductions</li></ul>
+        </div>
+        <div class="dcard">
+          <span class="dcard-badge">Secondary Markets</span>
+          <h3>Where FOMO gets its chance.</h3>
+          <ul><li>Pre-IPO opportunities</li><li>Secondaries</li><li>Liquidity transactions</li></ul>
+        </div>
+        <div class="dcard">
+          <span class="dcard-badge">Private Credit</span>
+          <h3>Capital without another board seat.</h3>
+          <ul><li>Venture debt</li><li>Specialty finance</li><li>Direct lending</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <section class="marq" id="access">
+    <div class="section-label fade-in">access to</div>
+    <div class="marquee fade-in">
+      <div class="marq-track">
+        <div class="marq-item">SpaceX</div><div class="marq-item">Anthropic</div><div class="marq-item">Figure AI</div><div class="marq-item">Neuralink</div><div class="marq-item">OpenAI</div><div class="marq-item">Crusoe</div><div class="marq-item">Anduril</div><div class="marq-item">Together AI</div><div class="marq-item">Prometheus</div><div class="marq-item">ByteDance</div>
+        <div class="marq-item">SpaceX</div><div class="marq-item">Anthropic</div><div class="marq-item">Figure AI</div><div class="marq-item">Neuralink</div><div class="marq-item">OpenAI</div><div class="marq-item">Crusoe</div><div class="marq-item">Anduril</div><div class="marq-item">Together AI</div><div class="marq-item">Prometheus</div><div class="marq-item">ByteDance</div>
+      </div>
+    </div>
+    <p class="marq-disc fade-in">Company names are referenced for illustrative purposes only and do not imply available securities or active transactions.</p>
+  </section>
+
+  <!-- ===== WHO WE SERVE ===== -->
+  <section class="serve" id="serve">
+    <div class="container">
+      <div class="section-label fade-in">who we serve</div>
+      <h2 class="section-title fade-in">Different Seats. <span class="hl">Same Table.</span></h2>
+      <div class="serve-grid fade-in">
+        <div class="scard">
+          <div class="scard-who">Family Offices</div>
+          <h3>You'd rather own the company than read about it.</h3>
+          <p>Access to private market opportunities across venture, secondaries, and credit.</p>
+        </div>
+        <div class="scard">
+          <div class="scard-who">Founders &amp; Operators</div>
+          <h3>Growth has a favorite fuel.</h3>
+          <p>Growth financings, private credit, and strategic introductions.</p>
+        </div>
+        <div class="scard">
+          <div class="scard-who">Funds</div>
+          <h3>DPI doesn't return itself.</h3>
+          <p>Capital, liquidity, and strategic relationships across the private market lifecycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="section-label fade-in">break bread</div>
+        <h2 class="fade-in">Private markets run on <em>relationships.</em></h2>
+        <p class="csub fade-in">Whether you're raising capital, seeking access, exploring liquidity, or evaluating opportunities, let's build one. Tell us what's on your mind.</p>
+        <div class="cform fade-in" id="form">
+          <div class="frow">
+            <input type="text" id="f-name" placeholder="Name" autocomplete="name">
+            <input type="email" id="f-email" placeholder="Email" autocomplete="email">
+          </div>
+          <select id="f-intent">
+            <option value="">You are...</option>
+            <option>a family office</option>
+            <option>a founder or operator</option>
+            <option>a fund</option>
+            <option>something else</option>
+          </select>
+          <textarea id="f-msg" placeholder="What's on your mind. Raising, access, liquidity, or just say hello."></textarea>
+          <button class="submit" id="send">send it</button>
+        </div>
+        <p class="sent" id="sent">Received. A real person reads these, usually the same day.</p>
+        <div class="contact-meta">929-259-2077 &nbsp;&middot;&nbsp; <a href="mailto:yes@prophet.partners">yes@prophet.partners</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <a href="#top" class="foot-logo">prophet<span class="dot"></span>partners</a>
+      <nav class="foot-nav">
+        <a href="#about">what we do</a>
+        <a href="#access">access</a>
+        <a href="#serve">who we serve</a>
+        <a href="#contact">break bread</a>
+      </nav>
+    </div>
+    <div class="disc">
+      <p><b>DISCLOSURE:</b> prophet.partners is a DBA name used to market the services of [Full Legal Name], conducted as a registered representative of Rainmaker Securities, LLC (RMS). RMS is a FINRA registered broker-dealer and SIPC member. Find this broker-dealer and its agents on BrokerCheck. Our relationship summary can be found on the RMS website. [Full Legal Name] is a principal of [Entity Name], which is not affiliated with RMS. All securities transactions are conducted through RMS.</p>
+      <p>This communication does not represent an offer or solicitation to buy or sell securities. RMS deals only in securities offered in private placements (Securities). The Securities are not approved or disapproved by the SEC or any other federal or state agency. Only investors that qualify as accredited investors as defined in Rule 501 of the Securities Act of 1933 may invest in the Securities. Investments in the Securities are speculative and involve a high degree of risk, including possible loss of the entire investment. Potential buyers or sellers should seek professional counsel prior to entering into any transaction.</p>
+      <p>Any company names referenced are for illustrative purposes only and do not constitute an offer to buy or sell any securities or imply the availability of any transaction.</p>
+      <div class="copyline">© 2026 prophet.partners 🙏🏼</div>
+    </div>
+  </div>
+</footer>
+
+<a href="#top" class="go-top" id="goTop" aria-label="back to top">↑</a>
+
+<script>
+  // rotating hero word: blur-morph slide
+  var words=["Unicorns","The Trillion-Dollar Club","Generational Companies","Liquidity Events","DPI","Private Market Access"];
+  var rotor=document.getElementById("rotor"),ri=3;
+  setInterval(function(){
+    rotor.classList.add("leave");
+    setTimeout(function(){
+      ri=(ri+1)%words.length;
+      rotor.textContent=words[ri];
+      rotor.classList.remove("leave");rotor.classList.add("enter");
+      void rotor.offsetWidth;
+      rotor.classList.remove("enter");
+    },460);
+  },2500);
+
+  // scroll reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("visible")})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".fade-in").forEach(function(el){io.observe(el)});
+
+  // nav + go-top
+  var burger=document.getElementById("burger"),links=document.getElementById("links");
+  burger.addEventListener("click",function(){links.classList.toggle("open")});
+  links.addEventListener("click",function(e){if(e.target.tagName==="A")links.classList.remove("open")});
+  var goTop=document.getElementById("goTop");
+  window.addEventListener("scroll",function(){goTop.classList.toggle("visible",window.scrollY>500)});
+
+  // form stub
+  document.getElementById("send").addEventListener("click",function(){
+    document.getElementById("form").style.display="none";
+    document.getElementById("sent").style.display="block";
+  });
+</script>
+</body>
+</html>
