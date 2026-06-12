@@ -349,23 +349,24 @@ footer{background:var(--black);color:#9b9486;padding:64px 0}
         <div class="section-label fade-in">break bread</div>
         <h2 class="fade-in">Private markets run on <em>relationships.</em></h2>
         <p class="csub fade-in">Let's build one.</p>
-        <div class="cform fade-in" id="form">
+        <form class="cform fade-in" id="form" action="https://formspree.io/f/xdavpopa" method="POST">
           <div class="frow">
-            <input type="text" id="f-name" placeholder="Name" autocomplete="name">
-            <input type="email" id="f-email" placeholder="Email" autocomplete="email">
+            <input type="text" id="f-name" name="name" placeholder="Name" autocomplete="name">
+            <input type="email" id="f-email" name="email" placeholder="Email" autocomplete="email" required>
           </div>
-          <select id="f-intent">
+          <select id="f-intent" name="you are">
             <option value="">You are...</option>
             <option>a family office</option>
             <option>a founder or operator</option>
             <option>a fund</option>
             <option>something else</option>
           </select>
-          <textarea id="f-msg" placeholder="What's on your mind. Raising, access, liquidity, or just say hello."></textarea>
-          <button class="submit" id="send">send it</button>
-        </div>
+          <textarea id="f-msg" name="message" placeholder="What's on your mind. Raising, access, liquidity, or just say hello." required></textarea>
+          <button class="submit" id="send" type="submit">send it</button>
+        </form>
         <p class="sent" id="sent">Received. A real person reads these, usually the same day.</p>
-        <div class="contact-meta">929-259-2077 &nbsp;&middot;&nbsp; <a href="mailto:yes@prophet.partners">yes@prophet.partners</a></div>
+        <p class="sent" id="formError" style="font-style:normal;font-size:1rem">Something went wrong. Please email <a href="mailto:yes@prophet.partners" style="color:#fff;border-bottom:1.5px solid #fff">yes@prophet.partners</a>.</p>
+        <div class="contact-meta">New York City<br>929-259-2077 &nbsp;&middot;&nbsp; <a href="mailto:yes@prophet.partners">yes@prophet.partners</a></div>
       </div>
     </div>
   </section>
@@ -384,8 +385,8 @@ footer{background:var(--black);color:#9b9486;padding:64px 0}
       </nav>
     </div>
     <div class="disc">
-      <p><b>DISCLOSURE:</b> prophet.partners is a DBA name used to market the services of [Full Legal Name], conducted as a registered representative of Rainmaker Securities, LLC (RMS). RMS is a FINRA registered broker-dealer and SIPC member. Find this broker-dealer and its agents on BrokerCheck. Our relationship summary can be found on the RMS website. [Full Legal Name] is a principal of [Entity Name], which is not affiliated with RMS. All securities transactions are conducted through RMS.</p>
-      <p>This communication does not represent an offer or solicitation to buy or sell securities. RMS deals only in securities offered in private placements (Securities). The Securities are not approved or disapproved by the SEC or any other federal or state agency. Only investors that qualify as accredited investors as defined in Rule 501 of the Securities Act of 1933 may invest in the Securities. Investments in the Securities are speculative and involve a high degree of risk, including possible loss of the entire investment. Potential buyers or sellers should seek professional counsel prior to entering into any transaction.</p>
+      <p><b>DISCLOSURE:</b> Rainmaker Securities, LLC ("RMS") is a FINRA registered broker-dealer and SIPC member. RMS representatives are supervised from the RMS registered branch office located at 3131 NE 1st Ave., Suite 3102, Miami, FL 33137. RMS is engaged by its clients to make referrals to buyers or sellers of securities. If such client closes a securities transaction with a buyer or seller so referred, RMS is entitled to a success fee from the client. Such success fee may be in the form of cash or in warrants to purchase securities of the client or client's affiliate. It is not uncommon for RMS or RMS representatives to hold equity in its issuer clients or in the issuers of securities purchased or sold by the parties to a transaction. This communication does not represent an offer or solicitation to buy or sell securities. Such an offer must be made via definitive legal documentation by the buyer or seller of securities. RMS deals only in securities offered in private placements ("Securities"). The Securities are not approved or disapproved by the SEC or any other federal or state agency. No regulatory agency has endorsed the accuracy or adequacy of this communication or any offer or solicitation to buy or sell the Securities. Only investors that qualify as "accredited investors", as defined Rule 501(d) of the Securities Act of 1933, may invest in the Securities. Investments in the Securities are speculative and involve a high degree of risk. An investor in the Securities should have little to no need for liquidity in the foreseeable future and should be able to withstand the loss of the entire investment. Potential buyers or sellers of the Securities should seek professional counsel prior to entering into any transaction.</p>
+      <p>The principal of prophet.partners is also registered agent of Rainmaker Securities, LLC ("RMS"). RMS is a FINRA registered broker-dealer and SIPC member. Find RMS and its agents on BrokerCheck. The RMS relationship summary can be found on the RMS website. RMS is not an affiliate of prophet.partners. All securities transactions conducted by the principals of prophet.partners will be conducted via RMS.</p>
       <p>Any company names referenced are for illustrative purposes only and do not constitute an offer to buy or sell any securities or imply the availability of any transaction.</p>
       <div class="copyline">© 2026 prophet.partners 🙏🏼</div>
     </div>
@@ -483,11 +484,29 @@ footer{background:var(--black);color:#9b9486;padding:64px 0}
     if(t)t.innerHTML=t.innerHTML+t.innerHTML;
   })();
 
-  // form stub
-  document.getElementById("send").addEventListener("click",function(){
-    document.getElementById("form").style.display="none";
-    document.getElementById("sent").style.display="block";
-  });
+  // contact form -> Formspree (AJAX, keeps the inline confirmation)
+  (function(){
+    var form=document.getElementById("form");
+    if(!form)return;
+    var sent=document.getElementById("sent");
+    var err=document.getElementById("formError");
+    var btn=document.getElementById("send");
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      err.style.display="none";
+      btn.disabled=true;btn.textContent="sending...";
+      fetch(form.action,{
+        method:"POST",
+        body:new FormData(form),
+        headers:{"Accept":"application/json"}
+      }).then(function(r){
+        if(r.ok){ form.style.display="none"; sent.style.display="block"; }
+        else { btn.disabled=false; btn.textContent="send it"; err.style.display="block"; }
+      }).catch(function(){
+        btn.disabled=false; btn.textContent="send it"; err.style.display="block";
+      });
+    });
+  })();
 </script>
 </body>
 </html>
